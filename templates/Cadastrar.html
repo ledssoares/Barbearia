@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block page_content %}
+<head>
+    <meta charset= "utf-8">
+    <title> Cadastro de Clientes</title>
+</head>
+<body>
+    <h1>Página de Cadastro</h1>
+    <!--<hr>
+    <form action="{{ url_for ('Cadastrar')}}" method= "POST">
+        
+        <table>
+            <tr> 
+                <td>Nome</td>
+                <td><input type= "text" name="nome"></td>
+            </tr>
+             <tr> 
+                <td>Telefone</td>
+                <td><input type= "text" name="telefone"></td>
+            </tr>
+             <tr> 
+                <td>E-mail</td>
+                <td><input type= "text" name="email"></td>
+                 <tr> 
+                <td>Data de nascimento</td>
+                <td><input type= "text" name="data_de_nascimento"></td>
+                
+            </tr>
+            </tr>
+        </table><br>
+        <input type= "submit" value= "Cadastrar">
+         -->
+         {{ wtf.quick_form(form)}}
+    </form>
+</body>
+
+{% endblock %}
