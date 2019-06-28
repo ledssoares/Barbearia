@@ -14,12 +14,16 @@ pip install flask flask-bootstrap flask-moment flask-wtf flask-sqlalchemy flask-
 ```python
 flask shell
 from app import db
+from datetime import date
 db.create_all()
 
-cliente = Cliente(nome="Milena", email="milena@gmail.com, telefone=40028922)
-cliente = Cliente(nome="Drielle", email="drielle@gmail.com, telefone=40028923)
-cliente = Cliente(nome="Victor", email="victor@gmail.com, telefone=40028924)
-cliente = Cliente(nome="Leticia", email="leticia@gmail.com, telefone=40028925)
+
+hoje = date.today()
+
+cliente = Cliente(nome="Milena", email="milena@gmail.com", telefone="40028922", data_de_nascimento=hoje)
+cliente = Cliente(nome="Drielle", email="drielle@gmail.com", telefone="40028923", data_de_nascimento=hoje)
+cliente = Cliente(nome="Victor", email="victor@gmail.com", telefone="40028924", data_de_nascimento=hoje)
+cliente = Cliente(nome="Leticia", email="leticia@gmail.com", telefone="40028925", data_de_nascimento=hoje)
 
 db.session.add(cliente)
 db.session.add(cliente)
