@@ -7,7 +7,7 @@ git clone https://github.com/ledssoares/Barbearia
 cd Barbearia
 python3 -m venv venv
 source venv/bin/activate
-pip install flask flask-bootstrap flask-moment flask-wtf flask-sqlalchemy flask-migrate
+pip install -r requirements.txt
 ```
 # Adicionando valores ao banco de dados:
 
@@ -40,7 +40,7 @@ flask run -p 8080
 # Autores
 ```
 Victor da Silva 
-Leticia de Sousa
+Leticia Soares
 Drielle de Moura
 Milena Batista
 ```
