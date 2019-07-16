@@ -29,14 +29,14 @@ class Cliente(db.Model):
     Nome = db.Column(db.String(128), index=True)
     Data_de_nascimento=db.Column(db.String(64))
     Telefone = db.Column(db.String(64))
-    Email = db.Column(db.String(64), unique=True)
+    Email = db.Column(db.String(64))
 
 
 class Myform(FlaskForm):
     Nome = StringField('Nome', validators=[DataRequired()])
     Data_de_nascimento=DateField('Data de Nascimento', format='%Y-%m-%d', validators=[Optional()])
     Telefone = StringField('Telefone', validators=[DataRequired()])
-    Email = StringField('E-mail', validators=[DataRequired()])
+    Email = StringField('E-mail')
     submit = SubmitField('Cadastrar')
 
 
@@ -51,7 +51,7 @@ def cadastrar():
         db.session.add(cliente)
         db.session.commit()
 
-        return redirect("inicio")
+        return redirect(url_for("inicio"))
     return render_template("Cadastrar.html", form=form)
 
 
